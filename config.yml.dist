@@ -1,0 +1,6 @@
+projectName:    "newRepo"
+host:           "example.org"
+gitPath:        "/srv/git/"
+symfonyVersion: "2.2.0"
+#remoteUser:
+#localUser:
