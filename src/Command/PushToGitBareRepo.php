@@ -35,7 +35,7 @@ class PushToGitBareRepo extends Command
         $command = $this->createCommand();
 
         $dialog  = $this->getHelperSet()->get('dialog');
-        $package = $dialog->askConfirmation($output, "<question>Do you want to clone this git repository?\n" . $command . "\n(y/N)</question>", false);
+        $package = $dialog->askConfirmation($output, "<question>Do you want to push this git repository?\n" . $command . "\n(y/N)</question>", false);
 
         if ($package) {
             $process = new Process($command);
