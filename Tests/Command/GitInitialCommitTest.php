@@ -43,7 +43,7 @@ class GitInitialCommitTest extends \PHPUnit_Framework_TestCase
 
     public function testCommandToExecuteIsTheCorrect()
     {
-        $this->assertEquals('cd /home/user/projects/newRepo/ && git commit -a -m "Initial commit. Symfony2 project created."', 
+        $this->assertEquals('cd /home/user/projects/newRepo/ && git init && git add . && git commit -a -m "Initial commit. Symfony2 project created."', 
                             $this->command->createCommand());
     }
 }

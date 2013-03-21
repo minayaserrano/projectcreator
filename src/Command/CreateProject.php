@@ -31,11 +31,11 @@ class CreateProject extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $commands = array(
-            'create-git-bare-repo',
-            'clone-git-repo',
             'update-composer',
             'create-symfony-project',
-            'git-initial-commit'
+            'git-initial-commit',
+            'create-git-bare-repo',
+            'push-to-git-bare-repo'
         );
 
         foreach($commands as $command) {

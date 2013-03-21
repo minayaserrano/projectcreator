@@ -11,6 +11,7 @@ use Multiuso\ProjectCreator\Command\UpdateComposer;
 use Multiuso\ProjectCreator\Command\CreateSfProject;
 use Multiuso\ProjectCreator\Command\GitInitialCommit;
 use Multiuso\ProjectCreator\Command\CreateProject;
+use Multiuso\ProjectCreator\Command\PushToGitBareRepo;
 
 
 $config = new Config();
@@ -20,6 +21,7 @@ $application->add(new CloneGitRepo($config->gitRemoteDir(), $config->localPath()
 $application->add(new UpdateComposer($config->localPath()));
 $application->add(new CreateSfProject($config->localPath(), $config->projectName, $config->symfonyVersion));
 $application->add(new GitInitialCommit($config->localPath(), $config->projectName));
+$application->add(new PushToGitBareRepo($config->gitRemoteDir(), $config->localPath(), $config->projectName));
 $application->add(new CreateProject());
 
 $application->run();

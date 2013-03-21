@@ -52,4 +52,3 @@ class CreateGitBareRepo extends Command
             ->setName('create-git-bare-repo');
     }
 }
-

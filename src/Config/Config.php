@@ -22,13 +22,6 @@ class Config
 
     public function __construct()
     {
-        // Load config.yml
-        $yaml = Yaml::parse('config.yml');
-
-        foreach ($yaml as $key => $value) {
-            $this->{$key} = $value;
-        }
-
         if (!$this->remoteUser) {
             $this->remoteUser = `whoami`;
             $this->remoteUser = trim($this->remoteUser, "\n");
@@ -37,6 +30,13 @@ class Config
         if (!$this->localUser) {
             $this->localUser = `whoami`;
             $this->localUser = trim($this->localUser, "\n");
+        }
+
+        // Load config.yml
+        $yaml = Yaml::parse('/home/' . $this->localUser . '/projects/projectcreator/config.yml');
+
+        foreach ($yaml as $key => $value) {
+            $this->{$key} = $value;
         }
     }
 
